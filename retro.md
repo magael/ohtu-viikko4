@@ -1,0 +1,6 @@
+# Tiivistelmä retrospektiivitekniikoista
+
+**Start, Stop, Continue, More of, Less of Wheel** kestää 10-25 minuuttia tiimin koosta ja sprintin pituudesta riippuen. Fasilitaattori käyttää pyörän muotoista julistetta kirjaamaan tiimin palaute viiteen kategoriaan. ”Pyörän” valmistuttua seuraa keskustelu, jossa päädytään tarkempiin kehitysratkaisuihin.
+”Start”-kategoriaan voidaan laittaa ehdotuksia aivan uusista käytännöistä, ”stop” sisältää esteeitä aiheuttavat tavat, joista olisi luovuttava, ”continue” tällä hetkellä toimivat asiat, ”more of” mielellään lisättävät ja ”less of” vähennettävät toimintatavat. Eri kategorioihin kirjattavaa kommentointia on rohkaistava ja sille annettava tilaa / aikaa.
+
+**Glad, Sad, Mad** on korkeintaan tunnin kestävä tekniikka, jossa kaikki osallistujat kirjaavat ongelmia, muutosehdotuksia ja havaintoja kolmeen kategoriaan. ”Glad”-kategoriaan listataan positiivisia kommentteja sprintistä ja tiimistä, ”sad”-kategoriaan negatiivisia ja ”mad”:iin valituksen kohteita, jotka voivat myös koskea tiimin ulkopuolisia tekijöitä. Osallistujat äänestävät kommenttien tärkeydestä, ja niista keskustellaan yhdessä tärkeysjärjestyksessä, kunnes joko kaikki on käsitelty tai aika loppuu kesken.
