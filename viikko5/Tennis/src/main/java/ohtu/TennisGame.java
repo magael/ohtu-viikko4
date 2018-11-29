@@ -27,9 +27,9 @@ public class TennisGame {
 
     public void wonPoint(String playerName) {
         if (playerName == player1Name) {
-            player1Score += 1;
+            player1Score++;
         } else if (playerName == player2Name){
-            player2score += 1;
+            player2score++;
         } else {
             System.out.println("Error: No such player.");
         }
