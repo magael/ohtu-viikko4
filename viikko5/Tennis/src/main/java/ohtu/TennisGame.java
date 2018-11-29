@@ -8,6 +8,9 @@ public class TennisGame {
     private final int FIFTEEN = 1;
     private final int THIRTY = 2;
     private final int FOURTY = 3;
+    private final int ADVANTAGE = 1;
+    private final int WIN = 2;
+    private final int VICTORY_MINIMUM = 4;
     private int player1Score;
     private int player2score;
     private String player1Name;
@@ -20,10 +23,6 @@ public class TennisGame {
         this.player2Name = player2Name;
         this.player1Score = 0;
         this.player2score = 0;
-        
-//        playerScore = new HashMap<>();
-//        playerScore.put(player1Name, 0);
-//        playerScore.put(player2Name, 0);
     }
 
     public void wonPoint(String playerName) {
@@ -34,27 +33,21 @@ public class TennisGame {
         } else {
             System.out.println("Error: No such player.");
         }
-        
-//        if (playerScore.containsKey(playerName)) {
-//            playerScore.put(playerName, playerScore.get(playerName) +1);
-//        }
     }
 
     public String getScore() {
-        String score = "";
-        int tempScore = 0;
         if (player1Score == player2score) {
-            score = evenScore();
-        } else if (player1Score >= 4 || player2score >= 4) {
-            score = advantageOrWin(score);
-        } else {
-            score = unevenScore(score);
+            return evenScore();
+        } else if (player1Score >= VICTORY_MINIMUM || player2score >= VICTORY_MINIMUM) {
+            return advantageOrWin();
         }
-        return score;
+        return unevenScore();
     }
 
-    private String unevenScore(String score) {
+    private String unevenScore() {
+        String score = "";
         int tempScore;
+        //repeat twice: first for player1, then for player2
         for (int i = 1; i < 3; i++) {
             if (i == 1) {
                 tempScore = player1Score;
@@ -80,22 +73,23 @@ public class TennisGame {
         return score;
     }
 
-    private String advantageOrWin(String score) {
-        int minusResult = player1Score - player2score;
-        if (minusResult == 1) {
+    private String advantageOrWin() {
+        String score = "";
+        int scoreDifference = player1Score - player2score;
+        if (scoreDifference == ADVANTAGE) {
             score = "Advantage " + player1Name;
-        } else if (minusResult == -1) {
+        } else if (scoreDifference == -ADVANTAGE) {
             score = "Advantage " + player2Name;
-        } else if (minusResult >= 2) {
+        } else if (scoreDifference >= WIN) {
             score = "Win for " + player1Name;
-        } else if (minusResult <= -2){
+        } else if (scoreDifference <= -WIN){
             score = "Win for " + player2Name;
         }
         return score;
     }
 
     private String evenScore() {
-        String score;
+        String score = "";
         switch (player1Score) {
             case LOVE:
                 score = "Love-All";
