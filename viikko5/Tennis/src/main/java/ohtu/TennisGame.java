@@ -9,8 +9,8 @@ public class TennisGame {
     private final int THIRTY = 2;
     private final int FOURTY = 3;
     private final int ADVANTAGE = 1;
-    private final int WIN = 2;
-    private final int VICTORY_MINIMUM = 4;
+    private final int WIN_DIFFERENCE = 2;
+    private final int WIN_MINIMUM = 4;
     private int player1Score;
     private int player2score;
     private String player1Name;
@@ -38,7 +38,7 @@ public class TennisGame {
     public String getScore() {
         if (player1Score == player2score) {
             return evenScore();
-        } else if (player1Score >= VICTORY_MINIMUM || player2score >= VICTORY_MINIMUM) {
+        } else if (player1Score >= WIN_MINIMUM || player2score >= WIN_MINIMUM) {
             return advantageOrWin();
         }
         return unevenScore();
@@ -80,9 +80,9 @@ public class TennisGame {
             score = "Advantage " + player1Name;
         } else if (scoreDifference == -ADVANTAGE) {
             score = "Advantage " + player2Name;
-        } else if (scoreDifference >= WIN) {
+        } else if (scoreDifference >= WIN_DIFFERENCE) {
             score = "Win for " + player1Name;
-        } else if (scoreDifference <= -WIN){
+        } else if (scoreDifference <= -WIN_DIFFERENCE){
             score = "Win for " + player2Name;
         }
         return score;
