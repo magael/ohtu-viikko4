@@ -16,7 +16,11 @@ public class Sovelluslogiikka {
         tulos = 0;
     }
  
-    public int tulos() {
+    public int getTulos() {
         return tulos;
+    }
+        
+    public void setTulos(int tulos) {
+        this.tulos = tulos;
     }
 }

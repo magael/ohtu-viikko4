@@ -12,6 +12,7 @@ public class Nollaa implements Komento {
     private Button nollaa;
     private Button undo;
     private Sovelluslogiikka sovelluslogiikka;
+    private int edellinenTulos;
 
     public Nollaa(TextField tuloskentta, TextField syotekentta, Button nollaa, Button undo, Sovelluslogiikka sovelluslogiikka) {
         this.tuloskentta = tuloskentta;
@@ -19,16 +20,21 @@ public class Nollaa implements Komento {
         this.nollaa = nollaa;
         this.undo = undo;
         this.sovelluslogiikka = sovelluslogiikka;
+        this.edellinenTulos = 0;
     }
 
     @Override
     public void suorita() {
+        edellinenTulos = sovelluslogiikka.getTulos();
         sovelluslogiikka.nollaa();
+        syotekentta.setText("");
+        tuloskentta.setText("");
     }
 
     @Override
     public void peru() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        sovelluslogiikka.setTulos(edellinenTulos);
+        tuloskentta.setText("" + edellinenTulos);
     }
 
 }
