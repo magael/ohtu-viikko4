@@ -70,7 +70,7 @@ public class IntJoukko {
     }
 
     public boolean poista(int luku) {
-        int poistettavanIndeksi = haePoistettavanIndeksi(luku);
+        int poistettavanIndeksi = haeIndeksi(luku);
         if (poistettavanIndeksi != -1) {
             siirraAlkioitaTaakse(poistettavanIndeksi);
             alkioidenLkm--;
@@ -79,7 +79,7 @@ public class IntJoukko {
         return false;
     }
 
-    private int haePoistettavanIndeksi(int luku) {
+    private int haeIndeksi(int luku) {
         for (int i = 0; i < alkioidenLkm; i++) {
             if (luku == ljono[i]) {
                 return i;
