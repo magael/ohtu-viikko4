@@ -7,31 +7,16 @@ public class Paaohjelma {
     private static final Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
-
+        System.out.println("Tervetuloa pelaamaan Kivi-Paperit-Saksia."
+                + "\nValitse pelityyppi: "
+                + "\n\"kaksinpeli\", \"tekoäly\", \"parempi\" tekoäly"
+                + "\ntai \"lopeta\" sulkeaksesi ohjelman.");
+        Pelitehdas pelitehdas = new Pelitehdas();
+        
         while (true) {
-            System.out.println("\nValitse pelataanko"
-                    + "\n (a) ihmistä vastaan "
-                    + "\n (b) tekoälyä vastaan"
-                    + "\n (c) parannettua tekoälyä vastaan"
-                    + "\nmuilla valinnoilla lopetataan");
-
-            String vastaus = scanner.nextLine();
-            if (vastaus.endsWith("a")) {
-                System.out.println("peli loppuu kun pelaaja antaa virheellisen siirron eli jonkun muun kuin k, p tai s");
-                KPSPelaajaVsPelaaja kaksinpeli = new KPSPelaajaVsPelaaja();
-                kaksinpeli.pelaa();
-            } else if (vastaus.endsWith("b")) {
-                System.out.println("peli loppuu kun pelaaja antaa virheellisen siirron eli jonkun muun kuin k, p tai s");
-                KPSTekoaly yksinpeli = new KPSTekoaly();
-                yksinpeli.pelaa();
-            } else if (vastaus.endsWith("c")) {
-                System.out.println("peli loppuu kun pelaaja antaa virheellisen siirron eli jonkun muun kuin k, p tai s");
-                KPSParempiTekoaly pahaYksinpeli = new KPSParempiTekoaly();
-                pahaYksinpeli.pelaa();
-            } else {
-                break;
-            }
-
+            String pelityyppi = scanner.nextLine();
+            if (pelityyppi.equals("lopeta")) break;
+            pelitehdas.hae(pelityyppi).pelaa();
         }
 
     }
